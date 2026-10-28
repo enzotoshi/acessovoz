@@ -2,7 +2,15 @@
 
 Frontend Three.js e servidor Python para controlar um livro com voz ou texto. Projeto de Enzo Toshiyuki Costa e Guilherme Sousa dos Santos.
 
-## Executar
+## Abrir pelo GitHub Pages
+
+A versão `docs/` funciona inteiramente no navegador, inclusive microfone, MFCCs e inferência neural com os pesos treinados. Não precisa instalar Python nem baixar o repositório.
+
+Para ativar uma vez: Settings → Pages → Deploy from a branch → main → /docs → Save. Depois abra https://enzotoshi.github.io/acessovoz/.
+
+A gravação é processada no navegador; não é enviada a um servidor. A versão JavaScript preserva os pesos e a extração de características do modelo Python. O reamostrador de áudio do navegador pode produzir pequenas diferenças. As pontuações não garantem acerto e a classe desconhecido não rejeita todos os sons possíveis.
+
+## Executar localmente (alternativa)
 
 Use Python 3.11 ou 3.12. Abra o terminal na pasta do repositório:
 
