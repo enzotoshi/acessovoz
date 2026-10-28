@@ -4,7 +4,7 @@
 
 Uma rede neural artificial é um modelo matemático formado por unidades chamadas neurônios artificiais, organizadas em camadas. Cada unidade combina números de entrada com pesos e um termo de ajuste chamado viés. Uma função de ativação permite aprender relações mais complexas. Durante o treinamento, os pesos são ajustados para reduzir os erros nas previsões. A inspiração no cérebro é limitada: a rede não pensa nem compreende as palavras como uma pessoa.
 
-No AcessoVoz, a entrada é uma representação numérica do áudio. As camadas intermediárias procuram padrões que ajudam a distinguir as cinco frases. A saída contém cinco escores, um para cada comando. A rede aprende a classificar exemplos, e não a transcrever qualquer fala.
+No AcessoVoz, a entrada é uma representação numérica do áudio. As camadas intermediárias procuram padrões que ajudam a distinguir sete ações e exemplos desconhecidos. A saída contém oito escores, um por classe. A rede aprende a classificar exemplos, e não a transcrever qualquer fala.
 
 ## Como funciona o aprendizado supervisionado?
 
@@ -39,10 +39,14 @@ A ideia é permitir controlar um leitor sem depender apenas de cliques ou digita
 
 ## Dataset desta versão com voz neural natural
 
-O dataset contém 100 WAVs sintetizados em português brasileiro pelo serviço Microsoft Edge TTS via edge-tts. Usamos Francisca e Antonio, com pequenas variações de velocidade e sem modificar o tom original. Cada combinação de voz e velocidade forma um perfil. São 20 perfis artificiais, e nenhuma pessoa gravou o dataset.
+O dataset contém 220 WAVs sintetizados em português brasileiro pelo serviço Microsoft Edge TTS via edge-tts. Usamos Francisca e Antonio, com pequenas variações de velocidade e sem modificar o tom original. Cada combinação de voz e velocidade forma um perfil. São 20 perfis artificiais, e nenhuma pessoa gravou o dataset.
 
 Cada perfil pertence a um único conjunto. Treino e teste usam Francisca e Antonio em velocidades diferentes, e a validação também compartilha essas vozes em velocidades distintas. Portanto, não há separação completa por voz: os resultados continuam limitados ao motor sintético e não demonstram desempenho humano. Os arquivos extras de demonstração usam Francisca na velocidade +2%.
 
 O programa conserva os MP3s originais e cria WAVs de 16 kHz para usar o mesmo processamento de MFCCs. A qualidade da síntese mudou e o modelo foi retreinado com os novos WAVs. A captura humana no Colab registra tentativas separadas, sem modificar as métricas sintéticas.
 
 Fonte: https://github.com/rany2/edge-tts
+
+## Versão atual
+
+Sete ações independentes e desconhecido. Comandos curtos também aparecem no treinamento. A navegação por parágrafos destaca trechos; a navegação por páginas vira o livro. O site executa os MFCCs e a inferência neural em JavaScript com os pesos treinados em TensorFlow, sem servidor externo. A narração neural Francisca usa MP3s previamente gerados do trecho fornecido.

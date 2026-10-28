@@ -9,6 +9,8 @@ COMANDOS = {
     'paragrafo_anterior': 'parágrafo anterior',
     'ativar_contraste': 'ativar contraste',
     'abrir_ajuda': 'abrir ajuda',
+    'proxima_pagina': 'próxima página',
+    'pagina_anterior': 'página anterior',
     'desconhecido': 'comando desconhecido',
 }
 SR = 16000

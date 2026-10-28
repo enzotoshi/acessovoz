@@ -1,5 +1,5 @@
 let modeloPromessa;
-export function carregarModelo(){return modeloPromessa??=(async()=>{const r=await fetch(new URL('./modelo.json',import.meta.url));if(!r.ok)throw Error('Não foi possível carregar os pesos do modelo. Recarregue a página.');return r.json()})()}
+export function carregarModelo(){return modeloPromessa??=(async()=>{const r=await fetch(new URL('./modelo.json?v=8classes-ia',import.meta.url));if(!r.ok)throw Error('Não foi possível carregar os pesos do modelo. Recarregue a página.');return r.json()})()}
 function potencia(segmento){const n=512,re=Float64Array.from(segmento),im=new Float64Array(n);for(let i=1,j=0;i<n;i++){let b=n>>1;for(;j&b;b>>=1)j^=b;j^=b;if(i<j)[re[i],re[j]]=[re[j],re[i]];}for(let len=2;len<=n;len*=2){const a=-2*Math.PI/len;for(let i=0;i<n;i+=len)for(let j=0;j<len/2;j++){const co=Math.cos(a*j),si=Math.sin(a*j),k=i+j+len/2;const vr=re[k]*co-im[k]*si,vi=re[k]*si+im[k]*co;re[k]=re[i+j]-vr;im[k]=im[i+j]-vi;re[i+j]+=vr;im[i+j]+=vi;}}return Array.from({length:257},(_,k)=>re[k]*re[k]+im[k]*im[k]);}
 export function caracteristicas(pcm,m){
  if(pcm.length<4000)throw Error('Áudio muito curto. Grave de 0,25 a 3 segundos.');

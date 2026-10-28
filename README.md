@@ -1,47 +1,39 @@
-# AcessoVoz — livro 3D
+# AcessoVoz — livro 3D acessível
 
-Frontend Three.js e servidor Python para controlar um livro com voz ou texto. Projeto de Enzo Toshiyuki Costa e Guilherme Sousa dos Santos.
+Abra **https://enzotoshi.github.io/acessovoz/**. Funciona no navegador, sem instalar Python ou baixar arquivos. Microfone requer permissão no navegador.
 
-## Abrir pelo GitHub Pages
-
-A versão `docs/` funciona inteiramente no navegador, inclusive microfone, MFCCs e inferência neural com os pesos treinados. Não precisa instalar Python nem baixar o repositório.
-
-Para ativar uma vez: Settings → Pages → Deploy from a branch → main → /docs → Save. Depois abra https://enzotoshi.github.io/acessovoz/.
-
-A gravação é processada no navegador; não é enviada a um servidor. A versão JavaScript preserva os pesos e a extração de características do modelo Python. O reamostrador de áudio do navegador pode produzir pequenas diferenças. As pontuações não garantem acerto e a classe desconhecido não rejeita todos os sons possíveis.
-
-## Executar localmente (alternativa)
-
-Use Python 3.11 ou 3.12. Abra o terminal na pasta do repositório:
-
-```bash
-python -m venv .venv
-```
-
-Ative o ambiente: Windows: `.venv\Scripts\activate`. macOS/Linux: `source .venv/bin/activate`.
-
-```bash
-python -m pip install -r requirements_frontend.txt
-python web.py
-```
-
-Abra http://localhost:8000. Mantenha o terminal aberto. O modelo treinado está incluído. Não abra frontend/index.html diretamente.
+Enzo Toshiyuki Costa e Guilherme Sousa dos Santos.
 
 ## Comandos
 
-- ouvir parágrafo: lê a página pela voz do navegador.
-- próximo parágrafo e parágrafo anterior: viram as páginas.
-- ativar contraste: alterna o contraste.
-- abrir ajuda: apresenta os comandos.
+| Comando | Alternativas escritas | Ação |
+|---|---|---|
+| ouvir parágrafo | ouvir, ler, ler texto | Narrar o trecho selecionado |
+| próximo parágrafo | avançar parágrafo | Destacar o próximo parágrafo |
+| parágrafo anterior | voltar parágrafo | Destacar o parágrafo anterior |
+| próxima página | próximo, avançar | Virar a página |
+| página anterior | voltar, anterior | Voltar uma página |
+| ativar contraste | contraste, alto contraste | Alternar contraste |
+| abrir ajuda | ajuda, comandos | Mostrar ajuda |
 
-Arraste o livro para mudar o ângulo. Digite um comando, grave três segundos pelo microfone ou envie um WAV de até três segundos. Permita o microfone no navegador quando solicitado.
+As ações de página e parágrafo são independentes. A entrada escrita aceita alternativas definidas, sem inventar pontuação neural. A voz usa MFCCs e os pesos da rede neural treinada de oito classes: sete ações e desconhecido. Formas curtas de voz também foram incluídas no treinamento. Sons desconhecidos ou pontuação abaixo de 70% não executam ações. A rejeição não é universal e a pontuação softmax não é garantia de acerto.
 
-Texto usa correspondência normalizada dos cinco comandos, sem porcentagem neural. Áudio usa Librosa/MFCCs e rede neural TensorFlow de seis classes. Desconhecido ou pontuação abaixo de 70% não executa ações. As pontuações softmax não são garantia de acerto.
+## Livro e narradora
 
-## Avaliação
+O leitor contém somente um trecho das páginas 7 a 9 do PDF de **Harry Potter e a Ordem da Fênix**, fornecido pelo usuário, com autoria de **J. K. Rowling**. Não contém o livro completo. O trecho tem narração neural **pt-BR-FranciscaNeural** pelo Edge TTS, em 15 arquivos MP3 correspondentes aos trechos de leitura. O comando ouvir inicia a narração; o player permite pausar e retomar. A opção continuar leitura passa aos próximos trechos. A gravação de comando interrompe a narração.
 
-Modelo treinado com 120 WAVs sintetizados: cinco comandos com 20 exemplos cada e 20 frases de desconhecido. Divisão: 72 treino, 24 validação e 24 teste. Resultado: 23/24 acertos (95,83%); desconhecido: 3/4. Um desconhecido foi classificado como abrir ajuda. Vozes sintéticas compartilhadas entre os conjuntos: o resultado não mede fala humana. Ensaie o microfone no computador da apresentação.
+O usuário pode carregar outro TXT; textos personalizados usam a voz disponível no navegador, pois não há servidor online de síntese.
 
-As evidências estão em resultados/. O repositório contém os arquivos necessários para executar o site, incluindo o modelo. Áudios brutos de treinamento e slides não são necessários para a execução e não estão neste repositório. Para gerar novamente os dados, instale também `edge-tts` e execute `python gerar_dataset_natural.py --saida dados_gerados`; depois use `python treinar.py --dataset dados_gerados/dataset`. A geração precisa de internet e pode produzir resultados de treinamento diferentes.
+## Modelo e avaliação
 
-Three.js e sua licença MIT estão em frontend/vendor/. O servidor inicia apenas em localhost. Este repositório não configura hospedagem pública.
+220 WAVs sintéticos. Divisão por perfil: 136 treino, 42 validação e 42 teste. Resultado desta revisão: **41/42 acertos (97,62%)**. Desconhecido: 3/4, com um erro para ouvir parágrafo. As vozes sintéticas são compartilhadas entre os conjuntos. Isso não mede reconhecimento de pessoas reais. As formas curtas e as frases completas foram incluídas; a rede ainda pode confundir comandos humanos.
+
+`docs/modelo.json` contém os mesmos pesos do modelo Keras em resultados/. MFCCs e inferência são executados em JavaScript. Testados contra Python nos WAVs: diferença máxima de características abaixo de 0,0002. O reamostrador do navegador pode produzir pequenas diferenças em gravações novas.
+
+## Publicação
+
+A raiz redireciona para docs/. O Pages pode publicar main /root ou main /docs. Three.js está em docs/vendor/, com licença MIT.
+
+## Servidor Python opcional
+
+A versão principal não precisa de servidor. Para servir a cópia local: instale requirements_frontend.txt e execute python web.py, depois abra localhost:8000. O modelo treinado está incluído. Áudios brutos de treino não estão no repositório; estão no ZIP completo de entrega.

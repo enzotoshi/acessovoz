@@ -4,7 +4,7 @@ os.environ.setdefault('TF_NUM_INTRAOP_THREADS','1');os.environ.setdefault('TF_NU
 from pathlib import Path
 import tempfile,threading,unicodedata
 from fastapi import FastAPI,UploadFile,HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel,Field
 from config import BASE,COMANDOS
@@ -39,7 +39,7 @@ async def audio(arquivo:UploadFile):
   return r
  except ValueError as e:raise HTTPException(400,str(e))
 @app.get('/')
-def inicio():return FileResponse(BASE/'frontend/index.html')
+def inicio():return RedirectResponse('/static/index.html')
 app.mount('/static',StaticFiles(directory=BASE/'frontend'),name='static')
 if __name__=='__main__':
  import uvicorn

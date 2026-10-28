@@ -5,6 +5,8 @@
     "paragrafo_anterior",
     "ativar_contraste",
     "abrir_ajuda",
+    "proxima_pagina",
+    "pagina_anterior",
     "desconhecido"
   ],
   "frases": {
@@ -13,6 +15,8 @@
     "paragrafo_anterior": "parágrafo anterior",
     "ativar_contraste": "ativar contraste",
     "abrir_ajuda": "abrir ajuda",
+    "proxima_pagina": "próxima página",
+    "pagina_anterior": "página anterior",
     "desconhecido": "comando desconhecido"
   },
   "sr": 16000,
