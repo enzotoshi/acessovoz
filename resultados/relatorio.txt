@@ -1,0 +1,16 @@
+Origem: fala sintetizada
+Acurácia de teste: 95.83%
+Perda: 0.0860
+
+                    precision    recall  f1-score   support
+
+   ouvir_paragrafo       1.00      1.00      1.00         4
+ proximo_paragrafo       1.00      1.00      1.00         4
+paragrafo_anterior       1.00      1.00      1.00         4
+  ativar_contraste       1.00      1.00      1.00         4
+       abrir_ajuda       0.80      1.00      0.89         4
+      desconhecido       1.00      0.75      0.86         4
+
+          accuracy                           0.96        24
+         macro avg       0.97      0.96      0.96        24
+      weighted avg       0.97      0.96      0.96        24

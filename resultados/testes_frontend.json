@@ -1,0 +1,130 @@
+[
+  {
+    "arquivo": "exemplos_novos/proximo_paragrafo.wav",
+    "classe": "proximo_paragrafo",
+    "frase": "próximo parágrafo",
+    "escore": 0.9985218644142151,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 0.00042123650200664997,
+      "proximo_paragrafo": 0.9985218644142151,
+      "paragrafo_anterior": 0.0002863314002752304,
+      "ativar_contraste": 8.585913019487634e-05,
+      "abrir_ajuda": 3.595199586925446e-07,
+      "desconhecido": 0.0006844383315183222
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "exemplos_novos/paragrafo_anterior.wav",
+    "classe": "paragrafo_anterior",
+    "frase": "parágrafo anterior",
+    "escore": 0.9986431002616882,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 2.255594608868705e-06,
+      "proximo_paragrafo": 0.0004486831894610077,
+      "paragrafo_anterior": 0.9986431002616882,
+      "ativar_contraste": 4.688828994403593e-05,
+      "abrir_ajuda": 0.00038124507409520447,
+      "desconhecido": 0.0004779290175065398
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "exemplos_novos/abrir_ajuda.wav",
+    "classe": "abrir_ajuda",
+    "frase": "abrir ajuda",
+    "escore": 0.9907140731811523,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 6.299640062934486e-06,
+      "proximo_paragrafo": 5.408691094999085e-07,
+      "paragrafo_anterior": 2.732094617385883e-05,
+      "ativar_contraste": 8.341044122062158e-06,
+      "abrir_ajuda": 0.9907140731811523,
+      "desconhecido": 0.009243495762348175
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "exemplos_novos/ativar_contraste.wav",
+    "classe": "ativar_contraste",
+    "frase": "ativar contraste",
+    "escore": 0.9995562434196472,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 1.8142819158128987e-07,
+      "proximo_paragrafo": 0.00018757878569886088,
+      "paragrafo_anterior": 3.2471016311319545e-05,
+      "ativar_contraste": 0.9995562434196472,
+      "abrir_ajuda": 2.740607305895537e-05,
+      "desconhecido": 0.0001960747758857906
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "exemplos_novos/ouvir_paragrafo.wav",
+    "classe": "ouvir_paragrafo",
+    "frase": "ouvir parágrafo",
+    "escore": 0.9983571171760559,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 0.9983571171760559,
+      "proximo_paragrafo": 0.0005909696337766945,
+      "paragrafo_anterior": 1.936802982527297e-05,
+      "ativar_contraste": 4.600220222528151e-07,
+      "abrir_ajuda": 8.729238288651686e-06,
+      "desconhecido": 0.0010233407374471426
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "dataset/desconhecido/neural_18.wav",
+    "classe": "desconhecido",
+    "frase": "comando desconhecido",
+    "escore": 0.9949663281440735,
+    "aceito": false,
+    "pontuacoes": {
+      "ouvir_paragrafo": 0.00016217792290262878,
+      "proximo_paragrafo": 0.0026859031058847904,
+      "paragrafo_anterior": 0.0015003153821453452,
+      "ativar_contraste": 0.000249266013270244,
+      "abrir_ajuda": 0.0004358979349490255,
+      "desconhecido": 0.9949663281440735
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "dataset/desconhecido/neural_19.wav",
+    "classe": "desconhecido",
+    "frase": "comando desconhecido",
+    "escore": 0.9975934624671936,
+    "aceito": false,
+    "pontuacoes": {
+      "ouvir_paragrafo": 0.00026892052846960723,
+      "proximo_paragrafo": 0.0009158404427580535,
+      "paragrafo_anterior": 9.275777847506106e-05,
+      "ativar_contraste": 0.0010938738705590367,
+      "abrir_ajuda": 3.513804404065013e-05,
+      "desconhecido": 0.9975934624671936
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  },
+  {
+    "arquivo": "dataset/desconhecido/neural_17.wav",
+    "classe": "abrir_ajuda",
+    "frase": "abrir ajuda",
+    "escore": 0.8451192378997803,
+    "aceito": true,
+    "pontuacoes": {
+      "ouvir_paragrafo": 0.0012797834351658821,
+      "proximo_paragrafo": 0.0003524497733451426,
+      "paragrafo_anterior": 0.012179805897176266,
+      "ativar_contraste": 0.0021276911720633507,
+      "abrir_ajuda": 0.8451192378997803,
+      "desconhecido": 0.1389409899711609
+    },
+    "origem": "rede neural: MFCC + seis classes"
+  }
+]

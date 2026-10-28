@@ -1,0 +1,26 @@
+{
+  "classes": [
+    "ouvir_paragrafo",
+    "proximo_paragrafo",
+    "paragrafo_anterior",
+    "ativar_contraste",
+    "abrir_ajuda",
+    "desconhecido"
+  ],
+  "frases": {
+    "ouvir_paragrafo": "ouvir parágrafo",
+    "proximo_paragrafo": "próximo parágrafo",
+    "paragrafo_anterior": "parágrafo anterior",
+    "ativar_contraste": "ativar contraste",
+    "abrir_ajuda": "abrir ajuda",
+    "desconhecido": "comando desconhecido"
+  },
+  "sr": 16000,
+  "n_mfcc": 20,
+  "features": "media_desvio_3_blocos",
+  "seed": 42,
+  "python": "3.12.14",
+  "tensorflow": "2.21.0",
+  "tipo_audio": "fala sintetizada",
+  "divisao": "perfis de sintese do manifesto"
+}

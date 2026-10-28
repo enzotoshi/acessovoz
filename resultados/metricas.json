@@ -1,0 +1,9 @@
+{
+  "acuracia_teste": 0.9583333134651184,
+  "perda_teste": 0.08596786856651306,
+  "treino": 72,
+  "validacao": 24,
+  "teste": 24,
+  "epocas_executadas": 100,
+  "origem_avaliacao": "fala sintetizada"
+}
