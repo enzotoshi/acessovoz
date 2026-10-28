@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+dados_gerados/
+nova_geracao_neural/
+resultados/arquivos_enviados/
+resultados/microfone/
