@@ -22,7 +22,6 @@ As ações de página e parágrafo são independentes. A entrada escrita aceita 
 
 O leitor contém somente um trecho das páginas 7 a 9 do PDF de **Harry Potter e a Ordem da Fênix**, fornecido pelo usuário, com autoria de **J. K. Rowling**. Não contém o livro completo. O trecho tem narração neural **pt-BR-FranciscaNeural** pelo Edge TTS, em 15 arquivos MP3 correspondentes aos trechos de leitura. O comando ouvir inicia a narração; o player permite pausar e retomar. A opção continuar leitura passa aos próximos trechos. A gravação de comando interrompe a narração.
 
-O usuário pode carregar outro TXT; textos personalizados usam a voz disponível no navegador, pois não há servidor online de síntese.
 
 ## Modelo e avaliação
 
