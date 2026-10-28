@@ -35,4 +35,13 @@ A raiz redireciona para docs/. O Pages pode publicar main /root ou main /docs. T
 
 ## Servidor Python opcional
 
-A versão principal não precisa de servidor. Para servir a cópia local: instale requirements_frontend.txt e execute python web.py, depois abra localhost:8000. O modelo treinado está incluído. Áudios brutos de treino não estão no repositório; estão no ZIP completo de entrega.
+A versão principal não precisa de servidor. Para servir a cópia local: instale requirements_frontend.txt e execute python web.py, depois abra localhost:8000. O modelo treinado está incluído. Áudios brutos de treino estão no ZIP completo de entrega.
+
+## Reconhecimento de voz humana
+
+Agora existem dois modos claramente separados:
+
+- **Voz humana:** transcrição SpeechRecognition do navegador em pt-BR, seguida da interpretação dos comandos. Pode exigir internet e enviar áudio ao serviço do provedor do navegador. Não é o modelo treinado pelo grupo e não usa suas pontuações. Se indisponível, a rede fica disponível como alternativa.
+- **Rede do projeto:** gravação de 3 segundos, MFCCs e oito classes, com normalização de pico para 0,85, como na geração dos áudios sintéticos. O ajuste corrige o desnível de volume; não comprova acurácia em pessoas. Não foram medidos resultados humanos nesta revisão. Para melhorar o treino humano de fato, são necessárias gravações humanas representativas em treino e teste separados por pessoa.
+
+O slide 11 contém um link clicável para o site e explica os dois modos. Os testes da transcrição foram feitos com simulação de eventos; ensaie com seu microfone e navegador reais.

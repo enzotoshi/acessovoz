@@ -11,6 +11,8 @@ def caracteristicas(caminho):
     rms = float(np.sqrt(np.mean(y ** 2)))
     if rms < 0.001:
         raise ValueError(f'Silêncio ou volume muito baixo: {caminho}')
+    # Mesmo ganho de pico utilizado na geração dos áudios de treino.
+    y = y * (0.85 / max(float(np.max(np.abs(y))), 1e-8))
     # Remove silêncio das bordas. Não remove pausas internas.
     y, _ = librosa.effects.trim(y, top_db=25)
     if len(y) > SEGUNDOS * SR:
